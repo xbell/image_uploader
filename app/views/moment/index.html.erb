@@ -1,0 +1,20 @@
+<h1>Captured Moments</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <% @pictures.in_groups_of(4, false).each do |group| %>
+        <div class="row">
+          <% group.each do |picture| %>
+            <div class="product col-md-3">
+          
+              <h3><%= picture.name %></h3>
+              <li><%= picture.description %></li>
+              <p><%= image_tag picture.url %></p>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

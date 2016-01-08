@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="row centered-form">
+    <div class="col-xs-12 col-sm-8 col-md-4 col-sm-offset-2 col-md-offset-4">
+      <div class="panel panel-default">
+      	<div class="panel-heading">
+		    	<h3 class="panel-title">Log In to Sharp Shooter</h3>
+		 		</div>
+		 		<div class="panel-body">
+			  	<form role="form" action="/log-in" method="POST">
+            <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+            <div class="form-group">
+		    			<input type="user" name="user" id="user" class="form-control input-sm" placeholder="Username" value="<%= @user %>">
+			  		</div>
+            <div class="form-group">
+		    			<input type="password" name="password" id="password" class="form-control input-sm" placeholder="Password">
+		  			</div>
+		    		<input type="submit" value="Log In" class="btn btn-info btn-block">
+			    </form>
+			  </div>
+    	</div>
+  	</div>
+  </div>
+</div>
