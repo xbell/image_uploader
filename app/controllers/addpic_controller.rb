@@ -14,8 +14,8 @@ class AddpicController < ApplicationController
       redirect_to "/mymoments", notice: "#{@picture.name} has been added to your captured moments!"
     else
       @picture.destroy
-      flash.now[:notice] = "Error adding photo, make sure to fill in all fields."
-      render :addpic
+      flash.now[:notice] = "Error adding photo, make sure to fill in all required fields."
+      render "addpic/index"
     end
   end
 
