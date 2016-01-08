@@ -1,3 +1,3 @@
 class Picture < ActiveRecord::Base
-  mount_uploader :image_file, ImageFileUploader
+  mount_uploader :url, ImageFileUploader
 end

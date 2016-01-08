@@ -7,10 +7,10 @@
         <div class="row">
           <% group.each do |picture| %>
             <div class="product col-md-3">
-          
+
               <h3><%= picture.name %></h3>
               <li><%= picture.description %></li>
-              <p><%= image_tag picture.url %></p>
+              <img><%= image_tag picture.url(:thumb) %></img>
             </div>
           <% end %>
         </div>

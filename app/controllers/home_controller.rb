@@ -24,7 +24,7 @@ class HomeController < ApplicationController
       @user.password = params[:password]
       if @user.save
         session[:user_id] = @user.id
-        redirect_to "/mymoments/#{@user.id}", notice: "You have successfully signed up!"
+        redirect_to "/mymoments", notice: "You have successfully signed up!"
       else
         render "sign_up"
       end
@@ -35,7 +35,7 @@ class HomeController < ApplicationController
     @user = User.find_by(user: params[:user])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to "/mymoments/#{@user.id}", flash: {success: "You have successfully logged in."}
+      redirect_to "/mymoments", flash: {success: "You have successfully logged in."}
     else
       render "login", flash: {notice: "Wrong username/password."}
     end

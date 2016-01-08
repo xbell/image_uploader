@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   post "/log-in", to: "home#login"
   get "/log-out", to: "home#logout", as: :logout
 
-  get "/mymoments/:id", to: "moment#index", as: :moment_home
-  post "mymoments/:id", to: "addpic#addpic"
+  get "/mymoments", to: "moment#index", as: :moment_home
+  post "mymoments", to: "addpic#addpic"
 
   # post "/addpic/:id", to: "addpic#addpic"
-  get "/addpic/:id", to: "addpic#index", as: :addpic
+  get "/addpic", to: "addpic#index", as: :addpic
 
 
   # The priority is based upon order of creation: first created -> highest priority.
