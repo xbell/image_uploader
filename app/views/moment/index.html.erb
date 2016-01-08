@@ -10,7 +10,7 @@
 
               <h3><%= picture.name %></h3>
               <li><%= picture.description %></li>
-              <img><%= image_tag picture.url(:thumb) %></img>
+              <img><%= image_tag picture.url.url(:square) %></img>
             </div>
           <% end %>
         </div>
