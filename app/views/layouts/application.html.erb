@@ -45,6 +45,7 @@
           <div class="navbar-right">
             <ul class="nav navbar-nav">
               <% if current_user %>
+                <li><%= link_to "Pic Peer Review", "#" %></li>
                 <li><%= link_to "Add File", addpic_path %></li>
                 <li><%= link_to "Moments Captured", moment_home_path %></li>
                 <li><%= link_to "My Account", "#" %></li>

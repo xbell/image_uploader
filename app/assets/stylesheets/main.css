@@ -65,6 +65,14 @@ body {
   border-radius: 8px;
 }
 
+.name-input {
+  color: black;
+}
+
+.description-input {
+  color: black;
+}
+
 .file {
   margin-left: 213px;
 }
@@ -83,16 +91,20 @@ h1 {
   font-size: 85px;
 }
 
-.photo-info {
-  /*text-align: right;*/
-  float: right;
-  border: 3px solid black;
-  margin-top: -900px;
-  width: 300px;
-  text-align: center;
-  height: 100px;
+.picture-details {
+  margin-bottom: 30px;
 }
 
-/*.photo-info li {
-  text-decoration: none;
-}*/
+.photo-info {
+  float: right;
+  border: 3px solid black;
+  /*margin-top: -530px;*/
+  width: 305px;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.photo-info li {
+  list-style: none;
+}

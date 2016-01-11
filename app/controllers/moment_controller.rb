@@ -8,4 +8,11 @@ class MomentController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+  def delete
+    @picture = Picture.find(params[:id])
+    picture_name = @picture.name
+    @picture.destroy
+    redirect_to "/mymoments", notice: "#{picture_name} has been deleted!"
+  end
+
 end
