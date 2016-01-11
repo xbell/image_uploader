@@ -14,6 +14,9 @@ Rails.application.routes.draw do
   get "/mymoments", to: "moment#index", as: :moment_home
   get "/mymoments/:id", to: "moment#show", as: :show_one
   delete "mymoments/:id", to: "moment#delete", as: :delete
+
+  get "/review-images", to: "review#review_images", as: :review_images
+
   # post "/mymoments", to: "addpic#addpic"
 
   # The priority is based upon order of creation: first created -> highest priority.
