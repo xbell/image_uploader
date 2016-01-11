@@ -10,6 +10,7 @@ class AddpicController < ApplicationController
     @picture.description = params[:description]
     @picture.user_id = current_user.id
     @picture.url = params[:url]
+    @picture.username = User.find(@picture.user_id).user
     if @picture.save
       redirect_to "/mymoments", notice: "#{@picture.name} has been added to your captured moments!"
     else

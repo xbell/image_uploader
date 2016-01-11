@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get "/review-images", to: "review#review_images", as: :review_images
 
+  # get "/user-photos", to: "review#user_photos", as: :user_photos
+
   # post "/mymoments", to: "addpic#addpic"
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -91,18 +91,49 @@ h1 {
   font-size: 85px;
 }
 
+.index a {
+  font-size: 25px;
+}
+
+.index li {
+  font-size: 15px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+a:link {
+  color: #68B0AB;
+}
+
+a:active {
+  color: #68B0AB;
+}
+
+a:visited {
+  color: #68B0AB;
+}
+
+a:hover {
+  color: #C8D5B9; text-decoration: underline;
+}
+
 .picture-details {
   margin-bottom: 30px;
 }
 
 .photo-info {
   float: right;
-  border: 3px solid black;
+  border: 3px double #FAF3DD;
   /*margin-top: -530px;*/
   width: 305px;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 20px;
+  border-radius: 8px;
+}
+
+.photo-info form {
+  border: none;
 }
 
 .photo-info li {
