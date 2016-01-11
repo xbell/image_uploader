@@ -37,7 +37,8 @@ class HomeController < ApplicationController
       session[:user_id] = @user.id
       redirect_to "/mymoments", flash: {success: "You have successfully logged in."}
     else
-      render "login", flash: {notice: "Wrong username/password."}
+      # flash.now[:notice] = "Wrong username/password."
+      render "login"
     end
   end
 

@@ -1,30 +1,35 @@
 <h1>Add a Photo!</h1>
 
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class = "form">
 
-<div class = "form">
-
-  <form action="/addpic" method="POST" enctype="multipart/form-data">
-    <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-    <div>
-      <h4>
-        <label for="name-input">IMAGE NAME</label>
-      </h4>
-      <input type="text" id = "name-input" name="name" />
+        <form action="/addpic" method="POST" enctype="multipart/form-data">
+          <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+          <div>
+            <h4>
+              <label for="name-input">IMAGE NAME</label>
+            </h4>
+            <input type="text" id = "name-input" name="name" />
+          </div>
+          <div>
+            <h4>
+              <label for="description-input">IMAGE DESCRIPTION (optional)</label>
+            </h4>
+            <input type="text" id = "description-input" name="description" />
+          </div>
+          <div>
+            <h4>
+              <label for="image-input">IMAGE URL</label>
+            </h4>
+            <input class="file" type="file" id = "image-input" name="url" />
+          </div>
+          <div class="submit">
+            <input type="submit" class="btn btn-default" />
+          </div>
+        </form>
+      </div>
     </div>
-    <div>
-      <h4>
-        <label for="description-input">IMAGE DESCRIPTION (optional)</label>
-      </h4>
-      <input type="text" id = "description-input" name="description" />
-    </div>
-    <div>
-      <h4>
-        <label for="image-input">IMAGE URL</label>
-      </h4>
-      <input type="file" id = "image-input" name="url" />
-    </div>
-    <div class="submit">
-      <input type="submit" class="btn btn-default" />
-    </div>
-  </form>
+  </div>
 </div>

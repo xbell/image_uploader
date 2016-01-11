@@ -8,12 +8,12 @@ Rails.application.routes.draw do
   post "/log-in", to: "home#login"
   get "/log-out", to: "home#logout", as: :logout
 
-  get "/mymoments", to: "moment#index", as: :moment_home
-  # post "/mymoments", to: "addpic#addpic"
-
-  # post "/addpic/:id", to: "addpic#addpic"
   get "/addpic", to: "addpic#index", as: :addpic
   post "/addpic", to: "addpic#addpic"
+
+  get "/mymoments", to: "moment#index", as: :moment_home
+  get "/mymoments/:id", to: "moment#show", as: :show_one
+  # post "/mymoments", to: "addpic#addpic"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
