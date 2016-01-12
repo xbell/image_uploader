@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   delete "mymoments/:id", to: "moment#delete", as: :delete
 
   get "/review-images", to: "review#review_images", as: :review_images
+  post "/review-images", to: "review#rate_image", as: :rate_image
 
   get "/user-photos", to: "review#user_photos", as: :user_photos
   get "/user-photos/:id", to: "review#show", as: :user_show_one

@@ -14,5 +14,18 @@ class ReviewController < ApplicationController
     @picture = Picture.find(params[:id])
   end
 
+  def rate_image
+    @review = Review.new
+    @review.comment = params[:comment]
+    @review.rating = params[:rating]
+    @review.picture_id = params[:id]
+    @review.user_id = current_user.id
+    if @review.save
+      redirect_to "/review-images"
+    else
+      @review.destroy
+      render "review/review_images"
+    end
+  end
 
 end
