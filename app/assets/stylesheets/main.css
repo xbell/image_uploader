@@ -91,6 +91,10 @@ h1 {
   font-size: 85px;
 }
 
+.index {
+  margin-bottom: 30px;
+}
+
 .index a {
   font-size: 25px;
 }
@@ -115,6 +119,10 @@ a:visited {
 
 a:hover {
   color: #C8D5B9; text-decoration: underline;
+}
+
+img {
+  border-radius: 8px;
 }
 
 .picture-details {

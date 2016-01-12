@@ -9,7 +9,7 @@
             <div class="product col-md-3 index">
               <a><%= link_to picture.name, show_one_path(picture.id) %></a>
               <li><%= picture.description %></li>
-              <img><%= image_tag picture.url.url(:square) %></img>
+              <img><%= link_to image_tag(picture.url.url(:square)), show_one_path(picture.id) %></img>
             </div>
           <% end %>
         </div>

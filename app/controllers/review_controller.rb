@@ -6,10 +6,9 @@ class ReviewController < ApplicationController
     @picture = Picture.all.order("RANDOM()").where.not(user_id: current_user.id).first
   end
 
-  # def user_photos
-  #   @pictures = Picture.all.where.not(user_id: current_user.id)
-  #   # @pictures.username = User.find(@picture.user_id).user
-  # end
+  def user_photos
+    @pictures = Picture.all.where(user_id: params[:user_id])
+  end
 
 
 end
