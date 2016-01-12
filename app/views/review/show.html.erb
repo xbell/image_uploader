@@ -1,0 +1,16 @@
+<h1><%= @picture.name %></h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="picture-details" id="picture-details">
+        <img><%= image_tag @picture.url.url(:big) %></img>
+        <div class="photo-info">
+          <li>Name: <%= @picture.name %></li>
+          <li>Description: <%= @picture.description %></li>
+          <p>Reviews</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

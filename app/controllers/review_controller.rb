@@ -10,5 +10,9 @@ class ReviewController < ApplicationController
     @pictures = Picture.all.where(user_id: params[:user_id])
   end
 
+  def show
+    @picture = Picture.find(params[:id])
+  end
+
 
 end
