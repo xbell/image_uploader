@@ -3,4 +3,8 @@ class Picture < ActiveRecord::Base
 
   validates :name, presence: true
   validates :url, presence: true
+
+  has_many :reviews
+  validates_associated :reviews
+  belongs_to :user
 end

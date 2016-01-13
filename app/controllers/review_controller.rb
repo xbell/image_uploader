@@ -2,8 +2,19 @@ class ReviewController < ApplicationController
 
 
   def review_images
-    # @pictures = Picture.all.find_all {|picture| picture.user_id != current_user.id }
-    @picture = Picture.all.order("RANDOM()").where.not(user_id: current_user.id).first
+
+    # First get a list of all pictures the current user has reviewed
+    reviewed_pictures = Picture.joins(:reviews).where(["reviews.user_id = ?", current_user.id])
+
+    # Next get a list of all pictures NOT associated with the user
+    other_user_pictures = Picture.all.where.not(user_id: current_user.id)
+
+    # Remove all pictures reviewed by the current user from the list of pictures NOT associated with the user to get a list of unreviewed pictures
+    unreviewed_pictures = other_user_pictures - reviewed_pictures
+
+    # Choose a random unreviewed picture to review
+    @picture = unreviewed_pictures.shuffle.first
+
   end
 
   def user_photos
