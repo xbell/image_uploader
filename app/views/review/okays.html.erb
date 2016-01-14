@@ -1,0 +1,19 @@
+<h1>Okays</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <% @okays.in_groups_of(4, false).each do |group| %>
+        <div class="row">
+          <% group.each do |okay| %>
+            <div class="product col-md-3 index">
+              <a><%= link_to okay.name, user_show_one_path(okay.id) %></a>
+              <li><%= okay.description %></li>
+              <img><%= link_to image_tag(okay.url.url(:square)), user_show_one_path(okay.id) %></img>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

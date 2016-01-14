@@ -1,5 +1,5 @@
 class Review < ActiveRecord::Base
-  # validates :user, presence: true
+  validates :rating, presence: true
 
   belongs_to :picture
   belongs_to :user

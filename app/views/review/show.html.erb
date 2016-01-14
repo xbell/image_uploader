@@ -8,6 +8,7 @@
         <div class="photo-info">
           <li>Name: <%= @picture.name %></li>
           <li>Description: <%= @picture.description %></li>
+          <li>Taken by: <%= link_to User.find(@picture.user_id).user, user_photos_path(user_id: @picture.user_id) %></li>
           <p>Reviews</p>
         </div>
       </div>

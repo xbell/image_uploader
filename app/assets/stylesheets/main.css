@@ -169,5 +169,11 @@ img {
 .nil {
   color: #FAF3DD;
   text-align: center;
-  margin-top: 100px;
+  margin-top: 70px;
+}
+
+.rating-links {
+  text-align: center;
+  list-style: none;
+  font-size: 25px;
 }

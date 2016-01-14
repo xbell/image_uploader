@@ -1,8 +1,6 @@
 class ReviewController < ApplicationController
 
-
   def review_images
-
     # First get a list of all pictures the current user has reviewed
     reviewed_pictures = Picture.joins(:reviews).where(["reviews.user_id = ?", current_user.id])
 
@@ -14,7 +12,6 @@ class ReviewController < ApplicationController
 
     # Choose a random unreviewed picture to review
     @picture = unreviewed_pictures.shuffle.first
-
   end
 
   def user_photos
@@ -32,11 +29,28 @@ class ReviewController < ApplicationController
     @review.picture_id = params[:id]
     @review.user_id = current_user.id
     if @review.save
+      RatingMailer.rating_email((Picture.find(@review.picture_id)).user_id).deliver_now
       redirect_to "/review-images"
     else
-      @review.destroy
+      @picture = Picture.find(params[:id])
       render "review/review_images"
     end
+  end
+
+  def show_rating
+    @reviews = Review.all.where(picture_id: @picture.id)
+  end
+
+  def thumbs_ups
+    @ups = Picture.joins(:reviews).where(["reviews.rating = 1"]).uniq
+  end
+
+  def okays
+    @okays = Picture.joins(:reviews).where(["reviews.rating = 0"]).uniq
+  end
+
+  def thumbs_downs
+    @downs = Picture.joins(:reviews).where(["reviews.rating = -1"]).uniq
   end
 
 end

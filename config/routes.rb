@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get "/log-in", to: "home#login"
   post "/log-in", to: "home#login"
   get "/log-out", to: "home#logout", as: :logout
+  get "/myaccount", to: "home#account", as: :account
+  post "/myaccount", to: "home#update_email"
 
   get "/addpic", to: "addpic#index", as: :addpic
   post "/addpic", to: "addpic#addpic"
@@ -20,6 +22,10 @@ Rails.application.routes.draw do
 
   get "/user-photos", to: "review#user_photos", as: :user_photos
   get "/user-photos/:id", to: "review#show", as: :user_show_one
+
+  get "/thumbs-ups", to: "review#thumbs_ups", as: :thumbs_ups
+  get "/okays", to: "review#okays", as: :okays
+  get "/thumbs-downs", to: "review#thumbs_downs", as: :thumbs_downs
 
   # post "/mymoments", to: "addpic#addpic"
 

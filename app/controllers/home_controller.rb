@@ -47,4 +47,12 @@ class HomeController < ApplicationController
     redirect_to "/", notice: "You have successfully logged out."
   end
 
+  def account
+
+  end
+
+  # def update_email
+  #   @user = User.find(:user_id)
+  # end
+
 end

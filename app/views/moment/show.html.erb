@@ -8,7 +8,19 @@
         <div class="photo-info">
           <li>Name: <%= @picture.name %></li>
           <li>Description: <%= @picture.description %></li>
-          <p>Reviews</p>
+          <% reviews = Review.all.where(picture_id: @picture.id) %>
+          <% reviews.each do |review| %>
+            <p>
+              <% if review.rating == 1 %>
+                <%= "Thumbs Up" %>
+              <% elsif review.rating == 0 %>
+                <%= "It's Okay" %>
+              <% else review.rating == -1 %>
+                <%= "Thumbs Down" %>
+              <% end %>
+              <%= review.comment %>
+            </p>
+          <% end %>
           <form action="/mymoments/<%= @picture.id %>" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <input type="hidden" name="_method" value="DELETE" />
