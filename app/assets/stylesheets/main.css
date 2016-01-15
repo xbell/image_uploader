@@ -178,3 +178,20 @@ img {
   font-size: 20px;
   margin-bottom: 20px;
 }
+
+.account {
+  text-align: center;
+}
+
+.account label {
+  margin-top: 20px;
+  color: #FAF3DD;
+}
+
+.email-input {
+  margin-top: 10px;
+}
+
+.update {
+  margin-top: 20px;
+}
