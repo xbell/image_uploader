@@ -10,12 +10,12 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
-= require jquery
+//= require jquery
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
 
-$('rating').submit(function(){
+$(".rating").submit(function(){
     //alert($('input[name=year]:checked').val());
 
   	alert($(this).serialize());
