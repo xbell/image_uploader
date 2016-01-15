@@ -3,7 +3,7 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 account">
-      <%= gravatar_for "evieb16@msn.com" %>
+      <%= gravatar_for @user.email %>
 
       <form action="/myaccount" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
