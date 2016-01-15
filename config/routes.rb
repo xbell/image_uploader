@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   post "/log-in", to: "home#login"
   get "/log-out", to: "home#logout", as: :logout
   get "/myaccount", to: "home#account", as: :account
-  post "/myaccount", to: "home#update_email"
+  post "/myaccount", to: "home#update_email", as: :update_email
 
   get "/addpic", to: "addpic#index", as: :addpic
   post "/addpic", to: "addpic#addpic"

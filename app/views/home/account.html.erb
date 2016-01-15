@@ -5,15 +5,18 @@
     <div class="col-md-12">
       <%= gravatar_for "evieb16@msn.com" %>
 
-      <!-- <form action="/myaccount" method="POST">
-      <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
-      <div>
-        <h4>
-          <label for="name-input">Update Email Address</label>
-        </h4>
-        <input type="text" id = "name-input" name="name" value="<%= @user.email %>" />
-      </div>
-    </form> -->
+      <form action="/myaccount" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+        <div>
+          <h4>
+            <label for="name-input">Update Email Address</label>
+          </h4>
+          <input type="text" id = "email-input" name="email" value="<%= current_user.email %>" />
+        </div>
+        <div class="update">
+          <input type="submit" value="Update" class="btn btn-default" />
+        </div>
+      </form>
 
 
     </div>

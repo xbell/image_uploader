@@ -48,11 +48,17 @@ class HomeController < ApplicationController
   end
 
   def account
-
+    @user = current_user
   end
 
-  # def update_email
-  #   @user = User.find(:user_id)
-  # end
+  def update_email
+    @user = current_user
+    @user.email = params[:email]
+    if @user.save
+      redirect_to "/myaccount", notice: "You have successfully changed your email!"
+    else
+      redirect_to "/myaccount", notice: "Please enter a valid email address."
+    end
+  end
 
 end

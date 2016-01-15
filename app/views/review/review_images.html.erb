@@ -1,17 +1,5 @@
 <h1>Review Images!</h1>
 
-<div class="rating-links">
-  <li>
-    <%= link_to "Thumbs Ups", thumbs_ups_path %>
-  </li>
-  <li>
-    <%= link_to "Okays", okays_path %>
-  </li>
-  <li>
-    <%= link_to "Thumbs Downs", thumbs_downs_path %>
-  </li>
-</div>
-
 <div class=nil>
   <% if @picture == nil %>
     <h2><%= "You have reviewed all images." %></h2>
@@ -56,3 +44,15 @@
     </div>
   </div>
 <% end %>
+
+<div class="rating-links">
+  <li>
+    <%= link_to "Thumbs Ups", thumbs_ups_path %> <%= link_to "Okays", okays_path %> <%= link_to "Thumbs Downs", thumbs_downs_path %>
+  </li>
+  <!-- <li>
+    <%= link_to "Okays", okays_path %>
+  </li>
+  <li>
+    <%= link_to "Thumbs Downs", thumbs_downs_path %>
+  </li> -->
+</div>
