@@ -21,10 +21,10 @@ class ReviewController < ApplicationController
 
   def show
     @picture = Picture.find(params[:id])
-    review_total = Review.where(picture_id: @picture.id)
-    @thumbs_ups = review_total.where(rating: 1).count
-    @okays = review_total.where(rating: 0).count
-    @thumbs_downs = review_total.where(rating: -1).count
+    @reviews = Review.where(picture_id: @picture.id)
+    @thumbs_ups = @reviews.where(rating: 1).count
+    @okays = @reviews.where(rating: 0).count
+    @thumbs_downs = @reviews.where(rating: -1).count
   end
 
   def rate_image

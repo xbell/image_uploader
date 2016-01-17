@@ -9,18 +9,29 @@
           <li>Name: <%= @picture.name %></li>
           <li>Description: <%= @picture.description %></li>
           <% reviews = Review.all.where(picture_id: @picture.id) %>
-          <% reviews.each do |review| %>
-            <p>
-              <% if review.rating == 1 %>
-                <%= "Thumbs Up" %>
-              <% elsif review.rating == 0 %>
-                <%= "It's Okay" %>
-              <% else review.rating == -1 %>
-                <%= "Thumbs Down" %>
+          <br>
+          <p>Reviews</p>
+          <div class="thumbs-up">
+            <span class="glyphicon glyphicon-thumbs-up"></span> : <%=@thumbs_ups %>
+          </div>
+          <div class="okay">
+            <span class="glyphicon glyphicon-question-sign"></span> : <%=@okays %>
+          </div>
+          <div class="thumbs-down">
+            <span class="glyphicon glyphicon-thumbs-down"></span> : <%=@thumbs_downs %>
+          </div>
+          <br>
+          <div class=comments>
+            <p>Comments</p>
+            <% @reviews.each do |review| %>
+              <% if review.comment != "" %>
+                <%= link_to User.find(review.user_id).user, user_photos_path(user_id: review.user.id) %>: "<%=review.comment %>"<br>
+              <% else %>
+                No comments yet.
               <% end %>
-              <%= review.comment %>
-            </p>
-          <% end %>
+            <% end %>
+          </div>
+          <br>
           <form action="/mymoments/<%= @picture.id %>" method="POST">
             <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
             <input type="hidden" name="_method" value="DELETE" />

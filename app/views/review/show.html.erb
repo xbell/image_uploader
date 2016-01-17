@@ -21,6 +21,17 @@
           <div class="thumbs-down">
             <span class="glyphicon glyphicon-thumbs-down"></span> : <%=@thumbs_downs %>
           </div>
+          <br>
+          <div class=comments>
+            <p>Comments</p>
+            <% @reviews.each do |review| %>
+              <% if review.comment != "" %>
+                <%= link_to User.find(review.user_id).user, user_photos_path(user_id: review.user.id) %>: "<%=review.comment %>"<br>
+              <% else %>
+                No comments yet.
+              <% end %>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
