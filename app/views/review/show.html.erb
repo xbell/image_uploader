@@ -8,8 +8,19 @@
         <div class="photo-info">
           <li>Name: <%= @picture.name %></li>
           <li>Description: <%= @picture.description %></li>
-          <li>Taken by: <%= link_to User.find(@picture.user_id).user, user_photos_path(user_id: @picture.user_id) %></li>
+          <li>Taken by: <%= link_to @picture.user.user, user_photos_path(user_id: @picture.user.id) %></li>
+          <li><%= gravatar_for(@picture.user.email) %></li>
+          <br>
           <p>Reviews</p>
+          <div class="thumbs-up">
+            <span class="glyphicon glyphicon-thumbs-up"></span> : <%=@thumbs_ups %>
+          </div>
+          <div class="okay">
+            <span class="glyphicon glyphicon-question-sign"></span> : <%=@okays %>
+          </div>
+          <div class="thumbs-down">
+            <span class="glyphicon glyphicon-thumbs-down"></span> : <%=@thumbs_downs %>
+          </div>
         </div>
       </div>
     </div>
