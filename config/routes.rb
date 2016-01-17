@@ -21,7 +21,7 @@ Rails.application.routes.draw do
   post "/review-images", to: "review#rate_image", as: :rate_image
 
   get "/user-photos", to: "review#user_photos", as: :user_photos
-  get "/user-photos/:id", to: "review#show", as: :user_show_one
+  get "/user-photo/:id", to: "review#show", as: :user_show_one
 
   get "/thumbs-ups", to: "review#thumbs_ups", as: :thumbs_ups
   get "/okays", to: "review#okays", as: :okays

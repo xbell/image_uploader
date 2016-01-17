@@ -15,6 +15,7 @@ class ReviewController < ApplicationController
   end
 
   def user_photos
+    @user = User.find(params[:user_id])
     @pictures = Picture.all.where(user_id: params[:user_id])
   end
 

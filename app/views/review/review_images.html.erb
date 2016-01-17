@@ -14,8 +14,8 @@
           <div class="photo-info">
             <li>Name: <%= @picture.name %></li>
             <li>Description: <%= @picture.description %></li>
-            <li>Taken by: <%= link_to User.find(@picture.user_id).user, user_photos_path(user_id: @picture.user_id) %></li>
-            <!-- <li>Taken by: <%= link_to @picture.user.user, user_photos_path(user: @picture.user.user) %></li> -->
+            <li>Taken by: <%= link_to @picture.user.user, user_photos_path(user_id: @picture.user.id) %></li>
+            <li><%= gravatar_for(@picture.user.email) %></li>
             <form action="<%= rate_image_path(id: @picture.id) %>" method="POST" class="rating" enctype="multipart/form-data">
               <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
               <label for="rating" class="control-label input-group"></label>
