@@ -23,11 +23,8 @@ Rails.application.routes.draw do
   get "/user-photos", to: "review#user_photos", as: :user_photos
   get "/user-photo/:id", to: "review#show", as: :user_show_one
 
-  get "/thumbs-ups", to: "review#thumbs_ups", as: :thumbs_ups
-  get "/okays", to: "review#okays", as: :okays
-  get "/thumbs-downs", to: "review#thumbs_downs", as: :thumbs_downs
+  get "/rankings", to: "review#rankings", as: :rankings
 
-  # post "/mymoments", to: "addpic#addpic"
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

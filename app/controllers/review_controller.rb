@@ -46,16 +46,18 @@ class ReviewController < ApplicationController
     @reviews = Review.all.where(picture_id: @picture.id)
   end
 
-  def thumbs_ups
-    @ups = Picture.joins(:reviews).where(["reviews.rating = 1"]).uniq
+  def rankings
+    @pics = Picture.all
+    @pics = @pics.sort { |pic1, pic2| get_picture_net_rating(pic2) <=> get_picture_net_rating(pic1) }
   end
 
-  def okays
-    @okays = Picture.joins(:reviews).where(["reviews.rating = 0"]).uniq
-  end
-
-  def thumbs_downs
-    @downs = Picture.joins(:reviews).where(["reviews.rating = -1"]).uniq
+  def get_picture_net_rating(picture)
+    reviews = Review.where(picture_id: picture.id)
+    net = 0
+    reviews.each do |review|
+      net += review.rating
+    end
+    net
   end
 
 end
