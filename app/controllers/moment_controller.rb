@@ -10,6 +10,14 @@ class MomentController < ApplicationController
     @thumbs_ups = @reviews.where(rating: 1).count
     @okays = @reviews.where(rating: 0).count
     @thumbs_downs = @reviews.where(rating: -1).count
+
+    @has_comments = false
+    @reviews.each do |review|
+      if review.comment != ""
+        @has_comments = true
+        break
+      end
+    end
   end
 
   def delete

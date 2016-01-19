@@ -23,12 +23,14 @@
           <br>
           <div class=comments>
             <p>Comments</p>
-            <% @reviews.each do |review| %>
-              <% if review.comment != "" %>
-                <%= link_to User.find(review.user_id).user, user_photos_path(user_id: review.user.id) %>: "<%=review.comment %>"<br>
-              <% else %>
-                No comments yet.
+            <% if @has_comments %>
+              <% @reviews.each do |review| %>
+                <% if review.comment != "" %>
+                  <%= link_to User.find(review.user_id).user, user_photos_path(user_id: review.user.id) %>: "<%=review.comment %>"<br>
+                <% end %>
               <% end %>
+            <% else %>
+              No comments yet.
             <% end %>
           </div>
           <br>
