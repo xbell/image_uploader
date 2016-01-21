@@ -42,7 +42,7 @@ class ReviewController < ApplicationController
     @review.picture_id = params[:id]
     @review.user_id = current_user.id
     if @review.save
-      RatingMailer.rating_email((Picture.find(@review.picture_id)).user_id).deliver_now
+      RatingMailer.rating_email((Picture.find(@review.picture_id)).user_id, @review.id).deliver_now
       redirect_to "/review-images"
     else
       @picture = Picture.find(params[:id])
